@@ -15,7 +15,6 @@ export default function Header({
                 <a href="#about">About us</a>
                 <a href="#contact">Contact us</a>
                 {/* <a href="" target="_blank">Blog</a> */}
-                
             </div>
         </div>
     )
