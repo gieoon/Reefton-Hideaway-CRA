@@ -15,13 +15,31 @@ export default function Section2({
                     <p>Select from our choice of accomodation</p>
                 </div>
                 <div className="ImageContainer-wrapper">
-                    <ImageContainer imgSrc={single} labelTxt="Single Room" />
-                    <ImageContainer imgSrc={twin} labelTxt="Twin/Double Room" />
-                    <ImageContainer imgSrc={family} labelTxt="Family Room" />
+                    <ImageContainer 
+                        imgSrc={single} 
+                        labelTxt="Single Room" 
+                        price="$50 first night, $35 second &amp; third nights, subsequent nights at $25."
+                        description="King-single bed"
+                        height="250px"
+                    />
+                    <ImageContainer 
+                        imgSrc={twin} 
+                        labelTxt="Twin/Double Room" 
+                        price="$45 one night, per person"
+                        description="King-single beds"
+                        height="250px"
+                    />
+                    <ImageContainer 
+                        imgSrc={family} 
+                        labelTxt="Family Room" 
+                        price="$120 per night"
+                        description="King-single beds"
+                        height="250px"
+                    />
                 </div>
 
                 <div>
-                    <p>We also cater to large groups, inquire for more information</p>
+                    <p>We also cater to large groups or long term residents and provide catering services/function rooms. Inquire for more information</p>
                 </div>
             </div>
         </div>
