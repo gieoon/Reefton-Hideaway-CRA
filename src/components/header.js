@@ -10,7 +10,7 @@ export default function Header({
                 <img src={logo} alt="" />
             </div>
             <div className="links-wrapper">
-                <a href="#availability">Check Availability</a>
+                <a href="#availability">Request a room</a>
                 <a href="/community">Community Kitchen</a>
                 <a href="#about">About us</a>
                 <a href="#contact">Contact us</a>

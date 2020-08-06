@@ -22,7 +22,7 @@ export default function Section5({}){
                 />
                 <ImageContainer 
                     imgSrc={lounge} 
-                    labelTxt="Cosy Lounge" 
+                    labelTxt="Quiet & Cosy Lounge" 
                     description="Enjoy a comfortable, quiet, secluded room with a fireplace after an exhausting excursion." 
                     height="300px"
                 />

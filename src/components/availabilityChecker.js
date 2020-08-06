@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import DatePicker from './datePicker';
 import moment from 'moment';
+import minus from '../assets/minus.svg';
+import plus from '../assets/plus.svg';
 
 const MONTHS = [
     "Jan", 
@@ -27,6 +29,8 @@ const DAYSOFWEEK = [
     "Sun"
 ];
 
+const SERVER_URL = "http://reefton-hideaway.appspot.com/process_form.php"
+
 export default function AvailabilityChecker({
 
 }){
@@ -43,6 +47,10 @@ export default function AvailabilityChecker({
 
     const [showingDatePicker, setShowDatePicker] = useState(false);
 
+    const [roomCount, setRoomCount] = useState(1);
+
+    const [paxCount, setPaxCount] = useState(1);
+
     const updateDates = (startDate, endDate) => {
         setCheckInDate(startDate);
         setCheckOutDate(endDate);
@@ -51,14 +59,39 @@ export default function AvailabilityChecker({
     return(
         <div className="AvailabilityChecker" id="availability">
 
-            <h2>Check Availability</h2>
+            <h2>Request a room</h2>
+            <p>Let us know your intentions and we'll get back to you.</p>
             <div className="DateInput-wrapper">
-                <DateInput date={todayDate} type="checkIn" setDate={setCheckInDate} setShowDatePicker={setShowDatePicker}/>
+                <div>
+                    <span className="DateInput-title">Checking in</span>
+                    <DateInput date={todayDate} type="Check in" setDate={setCheckInDate} setShowDatePicker={setShowDatePicker}/>
+                </div>
                 <div className="vertical-border"></div>
-                <DateInput date={tomorrowDate} type="checkOut" setDate={setCheckOutDate} setShowDatePicker={setShowDatePicker}/>
-                <PaxNumber />
-                <CheckAvailability />
+                <div>
+                    <span className="DateInput-title">Checking out</span>
+                    <DateInput date={tomorrowDate} type="Check out" setDate={setCheckOutDate} setShowDatePicker={setShowDatePicker}/>
+                </div>
+                <RoomNumber roomCount={roomCount} setRoomCount={setRoomCount} />
+                <PaxNumber paxCount={paxCount} setPaxCount={setPaxCount} />
             </div>
+
+            <div className="contact-details">
+                <input id="input-name" className="Input-name" type="text" placeholder="Name" required name="Name" />
+                <input id="input-email" className="Input-email" type="email" placeholder="Email" required name="Email" />
+                <input id="input-roomtype" className="Input-roomtype" type="text" placeholder="Room Type" required name="Message" />
+            </div>
+
+            <CheckAvailabilityBtn 
+                obj={{
+                    checkInDate: startDate,
+                    checkOutDate: endDate,
+                    roomCount,
+                    paxCount: paxCount,
+                    name: document.getElementById('input-name').value,
+                    email: document.getElementById('input-email').value,
+                    roomType: document.getElementById('input-roomtype').value,
+                }}
+            />
 
             {
                 showingDatePicker
@@ -90,22 +123,71 @@ function DateInput({
     )
 }
 
-function PaxNumber({
-
+function Minus({
+    callback
 }){
     return(
-        <button className="PaxNumber">
-            1 Room, 1 Guest
+        <div className="Minus" onClick={()=>callback()}>
+            <img src={minus} alt="" />
+        </div>
+    )
+}
+
+function Plus({
+    callback
+}){
+    return(
+        <div className="Plus" onClick={()=>callback()}>
+            <img src={plus} alt="" />
+        </div>
+    )
+}
+
+function RoomNumber({
+    roomCount,
+    setRoomCount
+}){
+    return(
+        <div className="RoomNumber">
+            <Minus callback={()=>setRoomCount(Math.max(0,roomCount-1))}/>
+            <div>
+                {roomCount}
+                {roomCount === 1 ? " Room" : " Rooms"}
+            </div>
+            <Plus callback={()=>setRoomCount(++roomCount)}/>
+        </div>
+    )
+}
+
+function PaxNumber({
+    paxCount,
+    setPaxCount,
+}){
+    return(
+        <div className="PaxNumber">
+            <Minus callback={()=>setPaxCount(Math.max(0, paxCount-1))}/>
+            <div>
+                {paxCount}
+                {paxCount === 1 ? " Guest" : " Guests"}
+            </div>
+            <Plus callback={()=>setPaxCount(++paxCount)}/>
+        </div>
+    )
+}
+
+
+function CheckAvailabilityBtn ({
+    obj
+}){
+    return(
+        <button 
+            className="CheckAvailability" 
+            onClick={()=>{sendData(obj)}}>
+            Notify Reefton Hideaway
         </button>
     )
 }
 
-function CheckAvailability ({
-
-}){
-    return(
-        <button className="CheckAvailability">
-            Notify Reefton Hideaway
-        </button>
-    )
+const sendData = (obj) => {
+    console.log('sending data: ', obj);
 }
