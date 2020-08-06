@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import DatePicker from './datePicker';
+import moment from 'moment';
 
 const MONTHS = [
     "Jan", 
@@ -30,10 +31,22 @@ export default function AvailabilityChecker({
 
 }){
 
-    const [todayDate, setCheckInDate] = useState(new Date());
-    const [tomorrowDate, setCheckOutDate] = useState(new Date(todayDate.getTime() + (24 * 60 * 60 * 1000)));
+    const [todayDate, setCheckInDate] = useState(
+        // new Date()
+        moment()
+    );
+
+    const [tomorrowDate, setCheckOutDate] = useState(
+        // new Date(todayDate.getTime() + (24 * 60 * 60 * 1000))
+        moment().add(1, "days")
+    );
+
     const [showingDatePicker, setShowDatePicker] = useState(false);
-    // console.log(todayDate, tomorrowDate);
+
+    const updateDates = (startDate, endDate) => {
+        setCheckInDate(startDate);
+        setCheckOutDate(endDate);
+    }
 
     return(
         <div className="AvailabilityChecker" id="availability">
@@ -49,7 +62,10 @@ export default function AvailabilityChecker({
 
             {
                 showingDatePicker
-                ? <DatePicker />
+                ? <DatePicker 
+                    startDate={todayDate} 
+                    endDate={tomorrowDate}
+                    updateDates={updateDates} />
                 : <div></div>
             }
 
@@ -65,10 +81,10 @@ function DateInput({
 }){
     return(
         <div className="DateInput" onClick={()=>setShowDatePicker(true)}>
-            <div className="dayOfMonth">{date.getDate()}</div>
+            <div className="dayOfMonth">{date.date()}</div>
             <div className="details-wrapper">
-                <span className="monthName">{MONTHS[date.getMonth()]}</span>
-                <span className="dayOfWeek">{date.toString().split(" ")[0]}</span>
+                <span className="monthName">{MONTHS[date.month() + 1]}</span>
+                <span className="dayOfWeek">{date.day().toString().split(" ")[0]}</span>
             </div>
         </div>
     )
