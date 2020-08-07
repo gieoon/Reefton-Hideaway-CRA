@@ -17,7 +17,7 @@ export default function ContactUs({}){
                         </div>
                         <div>
                             <img src={phone} alt="" />
-                            <span>(+64) 223580668</span>
+                            <span>Ramu: (+64) 223580668</span>
                         </div>
                         <div>
                             <img src={email} alt="" />

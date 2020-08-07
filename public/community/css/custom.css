@@ -1,0 +1,44 @@
+#reefton_nz {
+  width: 30%;
+  margin-left: 40%;
+}
+
+#contact > p{
+	/*color: white;*/
+
+}
+
+#contact {
+	margin-top: 5%;
+	margin-bottom: 5%;
+	text-align: center;
+}
+
+#contact-inner {
+/*	text-align: left;
+*/	margin: auto;
+/*	margin-left: 40%;*/
+}
+
+.images-container {
+	/*width: 30%;*/
+	margin-top: 2%;
+}
+
+.images-container > img {
+	padding: .5%;
+	object-fit: contain;
+}
+
+#title-img-container {
+	display: flex;
+}
+
+.title-img {
+	width: 30%;
+	height: 300px;
+	object-fit: cover;
+	display: block;
+	margin-left: auto;
+	margin-right: auto; 
+}

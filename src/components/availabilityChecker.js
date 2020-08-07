@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import DatePicker from './datePicker';
 import moment from 'moment';
 import minus from '../assets/minus.svg';
@@ -29,29 +29,28 @@ const DAYSOFWEEK = [
     "Sun"
 ];
 
-const SERVER_URL = "http://reefton-hideaway.appspot.com/process_form.php"
+const SERVER_URL = "http://localhost:8080/process_form.php"; //"http://reefton-hideaway.appspot.com/process_form.php"
 
 export default function AvailabilityChecker({
 
 }){
 
-    const [todayDate, setCheckInDate] = useState(
+    const [checkInDate, setCheckInDate] = useState(
         // new Date()
         moment()
     );
 
-    const [tomorrowDate, setCheckOutDate] = useState(
+    const [checkOutDate, setCheckOutDate] = useState(
         // new Date(todayDate.getTime() + (24 * 60 * 60 * 1000))
         moment().add(1, "days")
     );
-
-    const [showingDatePicker, setShowDatePicker] = useState(false);
 
     const [roomCount, setRoomCount] = useState(1);
 
     const [paxCount, setPaxCount] = useState(1);
 
     const updateDates = (startDate, endDate) => {
+        console.log("updating for: ", startDate, endDate);
         setCheckInDate(startDate);
         setCheckOutDate(endDate);
     }
@@ -62,15 +61,25 @@ export default function AvailabilityChecker({
             <h2>Request a room</h2>
             <p>Let us know your intentions and we'll get back to you.</p>
             <div className="DateInput-wrapper">
-                <div>
-                    <span className="DateInput-title">Checking in</span>
-                    <DateInput date={todayDate} type="Check in" setDate={setCheckInDate} setShowDatePicker={setShowDatePicker}/>
+
+                <DatePicker 
+                    startDate={checkInDate} 
+                    endDate={checkOutDate}
+                    updateDates={updateDates} />
+
+                <div className="DateInput_wrapper_custom">
+                    <div className="DateInput-title">
+                        <span className="">Checking in</span>
+                        <DateInput date={checkInDate} type="Check in" setDate={setCheckInDate} />
+                    </div>
+                    <div className="vertical-border"></div>
+                    <div className="DateInput-title">
+                        <span className="DateInput-title">Checking out</span>
+                        <DateInput date={checkOutDate} type="Check out" setDate={setCheckOutDate} />
+                    </div>
                 </div>
-                <div className="vertical-border"></div>
-                <div>
-                    <span className="DateInput-title">Checking out</span>
-                    <DateInput date={tomorrowDate} type="Check out" setDate={setCheckOutDate} setShowDatePicker={setShowDatePicker}/>
-                </div>
+                
+
                 <RoomNumber roomCount={roomCount} setRoomCount={setRoomCount} />
                 <PaxNumber paxCount={paxCount} setPaxCount={setPaxCount} />
             </div>
@@ -83,24 +92,12 @@ export default function AvailabilityChecker({
 
             <CheckAvailabilityBtn 
                 obj={{
-                    checkInDate: startDate,
-                    checkOutDate: endDate,
+                    checkInDate: checkInDate,
+                    checkOutDate: checkOutDate,
                     roomCount,
-                    paxCount: paxCount,
-                    name: document.getElementById('input-name').value,
-                    email: document.getElementById('input-email').value,
-                    roomType: document.getElementById('input-roomtype').value,
+                    paxCount,
                 }}
             />
-
-            {
-                showingDatePicker
-                ? <DatePicker 
-                    startDate={todayDate} 
-                    endDate={tomorrowDate}
-                    updateDates={updateDates} />
-                : <div></div>
-            }
 
         </div>
     );
@@ -108,18 +105,24 @@ export default function AvailabilityChecker({
 
 function DateInput({
     date,
-    setDate,
-    type,
-    setShowDatePicker
 }){
+    useEffect(()=>{
+        console.log('new Date: ', date);
+    },[date]);
+    // console.log(date.day())
     return(
-        <div className="DateInput" onClick={()=>setShowDatePicker(true)}>
-            <div className="dayOfMonth">{date.date()}</div>
-            <div className="details-wrapper">
-                <span className="monthName">{MONTHS[date.month() + 1]}</span>
-                <span className="dayOfWeek">{date.day().toString().split(" ")[0]}</span>
+        <>
+        { date
+            ? <div className="DateInput_custom">
+                <div className="dayOfMonth">{date.date()}</div>
+                <div className="details-wrapper">
+                    <span className="monthName">{MONTHS[date.month()]}</span>
+                    <span className="dayOfWeek">{DAYSOFWEEK[date.day()]}</span>
+                </div>
             </div>
-        </div>
+            : <></>
+        }
+        </>
     )
 }
 
@@ -149,7 +152,7 @@ function RoomNumber({
 }){
     return(
         <div className="RoomNumber">
-            <Minus callback={()=>setRoomCount(Math.max(0,roomCount-1))}/>
+            <Minus callback={()=>setRoomCount(Math.max(1,roomCount-1))}/>
             <div>
                 {roomCount}
                 {roomCount === 1 ? " Room" : " Rooms"}
@@ -165,7 +168,7 @@ function PaxNumber({
 }){
     return(
         <div className="PaxNumber">
-            <Minus callback={()=>setPaxCount(Math.max(0, paxCount-1))}/>
+            <Minus callback={()=>setPaxCount(Math.max(1, paxCount-1))}/>
             <div>
                 {paxCount}
                 {paxCount === 1 ? " Guest" : " Guests"}
@@ -188,6 +191,26 @@ function CheckAvailabilityBtn ({
     )
 }
 
-const sendData = (obj) => {
+const sendData = async (obj) => {
+    obj.checkInDate = obj.checkInDate.format('DD/MM/YYYY');
+    obj.checkOutDate = obj.checkOutDate.format('DD/MM/YYYY');
+    obj.name = document.getElementById('input-name').value;
+    obj.email = document.getElementById('input-email').value;
+    obj.roomType = document.getElementById('input-roomtype').value;
+
     console.log('sending data: ', obj);
+
+    const response = await fetch(SERVER_URL, {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(obj)
+    })
+    console.log(response.json());
 }
