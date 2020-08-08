@@ -113,7 +113,7 @@ $background-color-light: rgb(218, 242, 252);
   }
 
   p {
-    font-size: 28px;
+    font-size: 22px;
     line-height: 32px;
     color: black;
     margin: auto;
@@ -498,8 +498,6 @@ $background-color-light: rgb(218, 242, 252);
   width: 315px;
 }
 
-
-
 .ContactUs {
   padding: 64px 28px;
   text-align: center;
@@ -612,7 +610,7 @@ $background-color-light: rgb(218, 242, 252);
 
 .Footer {
   background-color: $primary-background-color;
-  padding: 35px 28px;
+  padding: 15px 28px;
   color: white;
 
   a,span {

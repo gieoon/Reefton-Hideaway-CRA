@@ -16,14 +16,17 @@ export default function Section5({}){
                 <ImageContainer 
                     imgSrc={cabins} 
                     labelTxt="Self contained cabins" 
-                    price="$150 per week including all expenses. $50 per night." 
-                    description="King-single bed, attached kitchenette and bathroom. Double beds available with prior arrangement at additional cost." 
+                    // price="$150 per week. $50 per night." 
+                    // Including all expenses
+                    description="$150 per week. $50 per night including all expenses. King-single bed, attached kitchenette and bathroom." 
+                    // Double beds available with prior arrangement at additional cost.
                     height="300px"
                 />
                 <ImageContainer 
                     imgSrc={lounge} 
                     labelTxt="Quiet & Cosy Lounge" 
-                    description="Enjoy a comfortable, quiet, secluded room with a fireplace after an exhausting excursion." 
+                    description="Enjoy a comfortable, quiet, secluded fireplace." 
+                    //after an exhausting excursion
                     height="300px"
                 />
                 <ImageContainer 

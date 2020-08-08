@@ -29,7 +29,9 @@ const DAYSOFWEEK = [
     "Sun"
 ];
 
-const SERVER_URL =  "http://reefton-hideaway.appspot.com/process_form.php"; //"http://localhost:8080/process_form.php"; 
+const SERVER_URL =  
+    "https://reefton-hideaway.appspot.com/process_form.php"; 
+    // "http://localhost:8080/process_form.php"; 
 
 export default function AvailabilityChecker({
 
@@ -104,7 +106,7 @@ export default function AvailabilityChecker({
                     />
                 </>
                 : <div>
-                    <h2>We've notified Reefton Hideaway, you'll hear back from us soon.</h2>
+                    <h2>We've notified Reefton Hideaway, you'll hear back from us soon :)</h2>
                 </div>
             }
         </div>
@@ -115,7 +117,7 @@ function DateInput({
     date,
 }){
     useEffect(()=>{
-        console.log('new Date: ', date);
+        // console.log('new Date: ', date);
     },[date]);
     // console.log(date.day())
     return(
@@ -212,16 +214,17 @@ const sendData = async (obj, setSuccess) => {
 
     const response = await fetch(SERVER_URL, {
         method: 'POST',
-        mode: 'cors',
+        mode: 'no-cors',
         cache: 'no-cache',
         credentials: 'same-origin',
         headers: {
+            'Accept': 'application/json',
             'Content-Type': 'application/json',
         },
         redirect: 'follow',
         referrerPolicy: 'no-referrer',
         body: JSON.stringify(obj)
     })
-    console.log(response.json());
+    console.log(response.text());
     
 }

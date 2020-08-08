@@ -1,4 +1,21 @@
 @media only screen and (max-width: 769px){
+    body {
+        overflow-x: hidden;
+    }
+
+    .Header {
+        justify-content: space-between;
+
+        .links-wrapper {
+            text-align: end;
+        }
+
+        .hideForMobile {
+            display: none;
+        }
+    }
+
+
     .logo-wrapper{
         img {
             height: 1.5rem!important; 
@@ -6,8 +23,92 @@
     }
 
     .ImageContainer {
+        padding-right: .5rem;
+
         button {
             height: 10rem!important;
+
+            span {
+                font-size: .85rem;
+                height: 32px;
+            }
+
+            p {
+                font-size: .65rem;
+            }
         }
+    }
+
+    .ImageContainer button:hover span {
+        height: calc(120%)!important;
+    }
+
+    .ImageContainer button:hover .price {
+        transform: translateY(-1rem);
+    }
+
+    p.description {
+        bottom: 0px!important;
+    }
+
+    p.price {
+        font-size: .65rem!important;
+    }
+
+    .Section1 {
+        p {
+            font-size: 18px!important;
+        }
+    }
+
+    .Inner {
+        padding: 0px!important;
+
+        h2, p:not(.price):not(.description) {
+            padding-left: 28px;
+            padding-right: 28px;
+        }
+
+        
+
+    }
+
+    .ContactUs {
+        
+
+        .Inner {
+            
+            .contact-wrapper {
+                text-align: left!important;
+                width: 100%;
+                white-space: normal!important;
+            }
+        }
+    }
+
+    .DateInput-wrapper {
+        display: grid!important;
+        height: initial!important;
+    }
+
+    .AvailabilityChecker {
+        border-right: none;
+        border-left: none;
+
+        .RoomNumber {
+            margin-left: 0px!important;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .PaxNumber {
+            margin-left: 0px!important;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+    }
+
+    .Footer {
+        padding-bottom: 64px;
     }
 }

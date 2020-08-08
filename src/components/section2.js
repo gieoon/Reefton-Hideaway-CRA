@@ -12,19 +12,19 @@ export default function Section2({
             <div className="Inner">
                 <div>
                     <h2>Accomodation offers</h2>
-                    <p>Select from our choice of accomodation</p>
+                    <p>Our room choices for your stay in Reefton.</p>
                 </div>
                 <div className="ImageContainer-wrapper">
                     <ImageContainer 
                         imgSrc={single} 
                         labelTxt="Single Room" 
-                        price="$50 first night, $35 second &amp; third nights, subsequent nights at $25."
+                        price="$50 first night, $25 - 35 for subsequent nights."
                         description="King-single bed"
                         height="250px"
                     />
                     <ImageContainer 
                         imgSrc={twin} 
-                        labelTxt="Twin/Double Room" 
+                        labelTxt="Twin / Double Room" 
                         price="$45 one night, per person"
                         description="King-single beds"
                         height="250px"

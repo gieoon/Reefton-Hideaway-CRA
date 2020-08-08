@@ -6,13 +6,13 @@
     // decode the JSON data
     $post = json_decode($post, true);
 
-    $name = $post['Name'];
-	$email = $post['Email'];
-    $msg = $post['Message'];
-    $checkIn = $post['CheckInDate'];
-    $checkOut = $post['CheckOutDate'];
-    $roomCount = $post['RoomCount'];
-    $paxCount = $post['PaxCount'];
+    $name = $post['name'];
+	$email = $post['email'];
+    $msg = $post['roomType'];
+    $checkIn = $post['checkInDate'];
+    $checkOut = $post['checkOutDate'];
+    $roomCount = $post['roomCount'];
+    $paxCount = $post['paxCount'];
 
     $outgoing = wordwrap($msg,70) 
         . "\n\nCLIENT NAME: " . $name 
@@ -23,10 +23,10 @@
         . "\nNUMBER OF PAX: " . $paxCount;
 
     // send email
-    mail("jun.a.kagaya@gmail.com","REEFTON HIDEAWAY | WEB ENQUIRY",$outgoing);
-	// mail("hello@reeftonhideaway.com","REEFTON HIDEAWAY | WEB ENQUIRY",$outgoing);
+    // mail("jun.a.kagaya@gmail.com","REEFTON HIDEAWAY | WEB ENQUIRY",$outgoing);
+	mail("hello@reeftonhideaway.com","REEFTON HIDEAWAY | WEB ENQUIRY",$outgoing);
 
 
     echo "Hello World yyoyo";
-
+    return http_response_code(200);
 ?>
