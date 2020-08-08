@@ -29,7 +29,7 @@ const DAYSOFWEEK = [
     "Sun"
 ];
 
-const SERVER_URL = "http://localhost:8080/process_form.php"; //"http://reefton-hideaway.appspot.com/process_form.php"
+const SERVER_URL =  "http://reefton-hideaway.appspot.com/process_form.php"; //"http://localhost:8080/process_form.php"; 
 
 export default function AvailabilityChecker({
 
@@ -55,50 +55,58 @@ export default function AvailabilityChecker({
         setCheckOutDate(endDate);
     }
 
+    const [success, setSuccess] = useState(false);
+
     return(
         <div className="AvailabilityChecker" id="availability">
+            {!success
+            ? <>
+                <h2>Request a room</h2>
+                    <p>Let us know your intentions and we'll get back to you.</p>
+                    <div className="DateInput-wrapper">
 
-            <h2>Request a room</h2>
-            <p>Let us know your intentions and we'll get back to you.</p>
-            <div className="DateInput-wrapper">
+                        <DatePicker 
+                            startDate={checkInDate} 
+                            endDate={checkOutDate}
+                            updateDates={updateDates} />
 
-                <DatePicker 
-                    startDate={checkInDate} 
-                    endDate={checkOutDate}
-                    updateDates={updateDates} />
+                        <div className="DateInput_wrapper_custom">
+                            <div className="DateInput-title">
+                                <span className="">Checking in</span>
+                                <DateInput date={checkInDate} type="Check in" setDate={setCheckInDate} />
+                            </div>
+                            <div className="vertical-border"></div>
+                            <div className="DateInput-title">
+                                <span className="DateInput-title">Checking out</span>
+                                <DateInput date={checkOutDate} type="Check out" setDate={setCheckOutDate} />
+                            </div>
+                        </div>
+                        
 
-                <div className="DateInput_wrapper_custom">
-                    <div className="DateInput-title">
-                        <span className="">Checking in</span>
-                        <DateInput date={checkInDate} type="Check in" setDate={setCheckInDate} />
+                        <RoomNumber roomCount={roomCount} setRoomCount={setRoomCount} />
+                        <PaxNumber paxCount={paxCount} setPaxCount={setPaxCount} />
                     </div>
-                    <div className="vertical-border"></div>
-                    <div className="DateInput-title">
-                        <span className="DateInput-title">Checking out</span>
-                        <DateInput date={checkOutDate} type="Check out" setDate={setCheckOutDate} />
+
+                    <div className="contact-details">
+                        <input id="input-name" className="Input-name" type="text" placeholder="Name" required name="Name" />
+                        <input id="input-email" className="Input-email" type="email" placeholder="Email" required name="Email" />
+                        <input id="input-roomtype" className="Input-roomtype" type="text" placeholder="Room Type" required name="Message" />
                     </div>
+
+                    <CheckAvailabilityBtn 
+                        obj={{
+                            checkInDate: checkInDate,
+                            checkOutDate: checkOutDate,
+                            roomCount,
+                            paxCount,
+                        }}
+                        setSuccess={setSuccess}
+                    />
+                </>
+                : <div>
+                    <h2>We've notified Reefton Hideaway, you'll hear back from us soon.</h2>
                 </div>
-                
-
-                <RoomNumber roomCount={roomCount} setRoomCount={setRoomCount} />
-                <PaxNumber paxCount={paxCount} setPaxCount={setPaxCount} />
-            </div>
-
-            <div className="contact-details">
-                <input id="input-name" className="Input-name" type="text" placeholder="Name" required name="Name" />
-                <input id="input-email" className="Input-email" type="email" placeholder="Email" required name="Email" />
-                <input id="input-roomtype" className="Input-roomtype" type="text" placeholder="Room Type" required name="Message" />
-            </div>
-
-            <CheckAvailabilityBtn 
-                obj={{
-                    checkInDate: checkInDate,
-                    checkOutDate: checkOutDate,
-                    roomCount,
-                    paxCount,
-                }}
-            />
-
+            }
         </div>
     );
 }
@@ -180,18 +188,19 @@ function PaxNumber({
 
 
 function CheckAvailabilityBtn ({
-    obj
+    obj,
+    setSuccess
 }){
     return(
         <button 
             className="CheckAvailability" 
-            onClick={()=>{sendData(obj)}}>
+            onClick={()=>{sendData(obj, setSuccess)}}>
             Notify Reefton Hideaway
         </button>
     )
 }
 
-const sendData = async (obj) => {
+const sendData = async (obj, setSuccess) => {
     obj.checkInDate = obj.checkInDate.format('DD/MM/YYYY');
     obj.checkOutDate = obj.checkOutDate.format('DD/MM/YYYY');
     obj.name = document.getElementById('input-name').value;
@@ -199,6 +208,7 @@ const sendData = async (obj) => {
     obj.roomType = document.getElementById('input-roomtype').value;
 
     console.log('sending data: ', obj);
+    setSuccess(true);
 
     const response = await fetch(SERVER_URL, {
         method: 'POST',
@@ -213,4 +223,5 @@ const sendData = async (obj) => {
         body: JSON.stringify(obj)
     })
     console.log(response.json());
+    
 }

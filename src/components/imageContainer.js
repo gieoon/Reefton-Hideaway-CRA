@@ -9,7 +9,7 @@ export default function ImageContainer({
 }){
     return(
         <div className="ImageContainer">
-            <button style={{backgroundImage:`url(${imgSrc})`,height: height}}>
+            <button style={{backgroundImage:`url(${imgSrc})`,height: height,outline: "none"}}>
                 <span>{labelTxt}</span>
 
                 <p className="price">{price}</p>

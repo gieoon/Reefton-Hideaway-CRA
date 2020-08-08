@@ -373,6 +373,12 @@ $background-color-light: rgb(218, 242, 252);
     color: white;
     font-size: 18px;
     height: 46px;
+    transition: all $anim-duration linear;
+    cursor: pointer;
+    
+    &:hover {
+      opacity: .75;
+    }
   }
 
   .contact-details {

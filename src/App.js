@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.scss';
+import './mobile.scss';
 import Header from './components/header';
 import Notification from './components/notification';
 import About from './components/about';
