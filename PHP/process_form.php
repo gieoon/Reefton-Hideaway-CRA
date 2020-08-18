@@ -24,7 +24,8 @@
 
     // send email
     // mail("jun.a.kagaya@gmail.com","REEFTON HIDEAWAY | WEB ENQUIRY",$outgoing);
-	mail("hello@reeftonhideaway.com","REEFTON HIDEAWAY | WEB ENQUIRY",$outgoing);
+    // mail("hello@reeftonhideaway.com","REEFTON HIDEAWAY | WEB ENQUIRY",$outgoing);
+    mail("reeftonhideaway@gmail.com","REEFTON HIDEAWAY | WEB ENQUIRY",$outgoing);
 
 
     echo "Hello World yyoyo";
