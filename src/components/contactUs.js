@@ -21,7 +21,8 @@ export default function ContactUs({}){
                         </div>
                         <div>
                             <img src={email} alt="" />
-                            <a href="mailto:hello@reeftonhideaway.com">hello@reeftonhideaway.com</a>
+                            {/* <a href="mailto:hello@reeftonhideaway.com">hello@reeftonhideaway.com</a> */}
+                            <a href="mailto:reeftonhideaway@gmail.com">reeftonhideaway@gmail.com</a>
                         </div>
                         <div>
                             <img src={email} alt="" />
