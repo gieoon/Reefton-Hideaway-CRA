@@ -3,6 +3,7 @@ import './App.scss';
 import './mobile.scss';
 import Header from './components/header';
 import Notification from './components/notification';
+import Disclaimer from './components/disclaimer';
 import About from './components/about';
 import Section1 from './components/section1';
 import Section2 from './components/section2';
@@ -18,7 +19,7 @@ import Social from './components/social';
 function App() {
   return (
     <div className="App">
-      <Header />
+      {/* <Header />
       <Notification />
       <Section1 />
       <Section2 />
@@ -27,9 +28,10 @@ function App() {
       <GettingHere />
       <Section5 />
       <AvailabilityChecker />
-      <About />
+      <About /> */}
+      <Disclaimer />
       <ContactUs />
-      <Footer />
+      {/* <Footer /> */}
       <Social />
     </div>
   );
