@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e528303647a4aebcb4638e97a8213a19",
+    "revision": "82d05ee4a930c2a77566b62989e1154e",
     "url": "/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.661b9127.chunk.css"
   },
   {
-    "revision": "2e0613b6d8990ee4236e",
-    "url": "/static/css/main.26d76184.chunk.css"
+    "revision": "15e3ceb63cf53139d01b",
+    "url": "/static/css/main.85b2e240.chunk.css"
   },
   {
     "revision": "5599acf8ca47a6421959",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.d8f58b7e.chunk.js.LICENSE"
   },
   {
-    "revision": "2e0613b6d8990ee4236e",
-    "url": "/static/js/main.dae3d008.chunk.js"
+    "revision": "15e3ceb63cf53139d01b",
+    "url": "/static/js/main.616b1ace.chunk.js"
   },
   {
     "revision": "526876ffeec74214774c",
@@ -48,16 +48,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/IMG_0490.224b00b8.jpeg"
   },
   {
-    "revision": "d971703879d00bb0d32cc5dae12aed07",
-    "url": "/static/media/IMG_0496.d9717038.jpeg"
-  },
-  {
     "revision": "43d74c5245ceead1e3f91a8b125bf36a",
     "url": "/static/media/IMG_0501.43d74c52.jpeg"
-  },
-  {
-    "revision": "c00ad647dd833e1d85f100c9077818f5",
-    "url": "/static/media/IMG_0503.c00ad647.jpeg"
   },
   {
     "revision": "e15ed3cefabfc70b85a6fecb4f42125b",
@@ -84,12 +76,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/IMG_0585.ea081ca9.jpeg"
   },
   {
-    "revision": "394a00b7ef14e143c663c4930ae335e2",
-    "url": "/static/media/Reefton_hideaway.394a00b7.jpg"
-  },
-  {
     "revision": "800d53470b5a6aff79ba0225ac39c118",
     "url": "/static/media/arthurs_pass.800d5347.jpg"
+  },
+  {
+    "revision": "a542e7390af3b5477fb5c30290958b0a",
+    "url": "/static/media/background.a542e739.jpg"
+  },
+  {
+    "revision": "20a198365a5da5822dc046851317ac92",
+    "url": "/static/media/cabin_inner.20a19836.jpg"
   },
   {
     "revision": "2ed6ccfedd8589c755e45c686512ce57",
@@ -104,28 +100,32 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/facebook.387ac114.svg"
   },
   {
-    "revision": "d0fc327aafd3fe39a7b031146b9b9e85",
-    "url": "/static/media/family_room.d0fc327a.jpg"
+    "revision": "a5f82021fe49a067454c8b2177b5a61f",
+    "url": "/static/media/family_room.a5f82021.jpg"
+  },
+  {
+    "revision": "a414eb1ca75c5206e36e658c82a80ba9",
+    "url": "/static/media/fireplace.a414eb1c.jpg"
   },
   {
     "revision": "3268ff29f0afc0d0e3c38435f47cd1f4",
     "url": "/static/media/inangahua.3268ff29.jpg"
   },
   {
+    "revision": "d2fc8ea1fd131eb38236efb92072fb7d",
+    "url": "/static/media/kitchen.d2fc8ea1.jpg"
+  },
+  {
+    "revision": "49f5bb997c7b9af173ab82e1061b5da7",
+    "url": "/static/media/kitchen_wide.49f5bb99.jpg"
+  },
+  {
     "revision": "d8f710ad03c428a1e2068c7f20719ac3",
     "url": "/static/media/location.d8f710ad.svg"
   },
   {
-    "revision": "678440cf0e6f22d48c5ce7c27b2018cb",
-    "url": "/static/media/marketing1.678440cf.jpg"
-  },
-  {
-    "revision": "c457896b8ae8db6e661dc9a09bd2229d",
-    "url": "/static/media/marketing17.c457896b.jpg"
-  },
-  {
-    "revision": "a40b3c116c9fc12b77e67e009d2592f6",
-    "url": "/static/media/marketing6.a40b3c11.jpg"
+    "revision": "c8f4a2a4f69892b9fdd7ac3290e66738",
+    "url": "/static/media/main_hall_bright.c8f4a2a4.jpg"
   },
   {
     "revision": "f8d8953cc54b2cc4eccb7bbe81739499",
@@ -152,11 +152,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/rotoiti.dbc84251.jpg"
   },
   {
-    "revision": "243caa99eec322c3d719cfd219c0ec68",
-    "url": "/static/media/single_room.243caa99.jpg"
+    "revision": "1196e1d8fc1fddb29f0bd701068ac4c4",
+    "url": "/static/media/single_room.1196e1d8.jpg"
   },
   {
-    "revision": "5424ba13864815f7e21d77af23887a5d",
-    "url": "/static/media/twin_room.5424ba13.jpg"
+    "revision": "4b3c24f84c6858ea2d5c7eb8eed5be25",
+    "url": "/static/media/twin_room.4b3c24f8.jpg"
   }
 ]);
