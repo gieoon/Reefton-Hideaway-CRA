@@ -1,7 +1,7 @@
 import React from 'react';
-import single from '../assets/images/single_room.jpg';
-import twin from '../assets/images/twin_room.jpg';
-import family from '../assets/images/family_room.jpg';
+import single from '../assets/images_anita/single_room.jpg';
+import twin from '../assets/images_anita/twin_room.jpg';
+import family from '../assets/images_anita/family_room.jpg';
 import ImageContainer from './imageContainer';
 
 export default function Section2({

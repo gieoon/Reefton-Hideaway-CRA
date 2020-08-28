@@ -3,10 +3,12 @@ import DisplayImageContainer from './displayImageContainer';
 import meal1 from '../assets/images/IMG_0465.jpeg';
 import meal2 from '../assets/images/IMG_0488.jpeg';
 import meal3 from '../assets/images/IMG_0490.jpeg';
-import meal4 from '../assets/images/IMG_0496.jpeg';
+// import meal4 from '../assets/images/IMG_0496.jpeg';
+import meal4 from '../assets/images_anita/kitchen.jpg'
 import meal5 from '../assets/images/IMG_0501.jpeg';
 // import meal6 from '../assets/images/IMG_0502.jpeg';
-import meal7 from '../assets/images/IMG_0503.jpeg';
+// import meal7 from '../assets/images/IMG_0503.jpeg';
+import meal7 from '../assets/images_anita/kitchen_wide.jpg';
 import meal8 from '../assets/images/IMG_0504.jpeg';
 import meal9 from '../assets/images/IMG_0505.jpeg';
 import meal10 from '../assets/images/IMG_0506.jpeg';

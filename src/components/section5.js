@@ -1,8 +1,11 @@
 import React from 'react';
 import ImageContainer from './imageContainer';
-import cabins from '../assets/images/marketing1.jpg';
-import lounge from '../assets/images/marketing6.jpg';
-import mainhall from '../assets/images/marketing17.jpg';
+// import cabins from '../assets/images/marketing1.jpg';
+// import lounge from '../assets/images/marketing6.jpg';
+// import mainhall from '../assets/images/marketing17.jpg';
+import cabins from '../assets/images_anita/cabin_inner.jpg';
+import lounge from '../assets/images_anita/fireplace.jpg';
+import mainhall from '../assets/images_anita/main_hall_bright.jpg';
 
 export default function Section5({}){
     return(

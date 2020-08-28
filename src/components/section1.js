@@ -1,5 +1,6 @@
 import React from 'react';
-import section1 from '../assets/images/Reefton_hideaway.jpg';
+// import section1 from '../assets/images/Reefton_hideaway.jpg';
+import section1 from '../assets/images_anita/background.jpg';
 
 export default function Section1({
 

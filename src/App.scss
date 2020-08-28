@@ -100,6 +100,7 @@ $background-color-light: rgb(218, 242, 252);
   img {
     width: 100%;
     min-width: 100%;
+    filter: grayscale(0%);
   }
 
   h2 {
@@ -108,7 +109,7 @@ $background-color-light: rgb(218, 242, 252);
     line-height: 36px;
     letter-spacing: 0px;
     color: rgb(0, 156, 222);
-    margin: 0px;
+    margin: 0px 6px;
     text-align: center;
   }
 
