@@ -6,10 +6,15 @@ export default function GettingHere({}){
             <div className="Inner">
                 <h2>Getting Here</h2>
                 <p>
-                    If arriving by public transport,  
+                    {/* If arriving by public transport,  
                     <a  rel="noopener noreferrer"
                         href="https://www.eastwestcoaches.co.nz/East-West%20Coaches" target="_blank"> East-West Coaches </a>
-                     departs from Christchurch at 1:45pm and arrives at Reefton Hideaway at 5:45pm. $60 for the trip, airport pickup can be arranged for an additional $25 ($85 total). The service travels as far as Westport, and is ideal for passengers coming from Christchurch and going on to Punakaiki in a few days. A return service departs 9am, Saturday to Friday.
+                     departs from Christchurch at 1:45pm and arrives at Reefton Hideaway at 5:45pm. $60 for the trip, airport pickup can be arranged for an additional $25 ($85 total). The service travels as far as Westport, and is ideal for passengers coming from Christchurch and going on to Punakaiki in a few days. A return service departs 9am, Saturday to Friday. */}
+                    Reefton Hideaway is located at 20 Crampton Road, Reefton 7830, just off Buller Road.
+
+                    If relying on public transport, the East West Coaches leave Christchurch at 1:45pm most days and arrives in Reefton at 5:45pm. The trip costs $60. If you ask the driver, he will be able to drop you right in front of Reefton Hideaway for no extra charge.
+
+                    Be sure to check timetables and prices before traveling, as these are subject to change. .
                 </p>
 
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2959.6823983613726!2d171.8596601624267!3d-42.114272392953474!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d2567fa5c776f97%3A0xce1dd1b7d00bf356!2s20%20Crampton%20Road%2C%20Reefton%207830!5e0!3m2!1sen!2snz!4v1583943751105!5m2!1sen!2snz" 

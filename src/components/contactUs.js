@@ -9,7 +9,7 @@ export default function ContactUs({}){
             <div className="Inner">
                 <div>
                     <h2>Contact Us</h2>
-                    <p>Please feel free to ask us any questions</p>
+                    <p>Please feel free to ask us any questions. We're friendly.</p>
                     <div className="contact-wrapper">
                         <div>
                             <img src={location} alt="" />

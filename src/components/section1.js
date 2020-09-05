@@ -10,7 +10,6 @@ export default function Section1({
             <img src={section1} alt="" />
             <h2>Enjoy The Friendliest Travel Experience</h2>
             <p>Engage in conversations with locals. Familiarize yourself with the heart of Reefton.</p>
-
         </div>
     )
 }

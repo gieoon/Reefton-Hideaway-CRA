@@ -12,7 +12,8 @@ export default function Section5({}){
         <div className="Section5">
             <div className="Inner">
                 <h2>Venues for hire</h2>
-                <p>If you are looking for a place to host a meeting or multi-day function, youth camps, community gatherings, or long term accomodation; we have venues for hire.</p>
+                {/* <p>If you are looking for a place to host a meeting or multi-day function, youth camps, community gatherings, or long term accomodation; we have venues for hire.</p> */}
+                <p>Reefton Hideaway is the perfect place for groups to meet, for multi-day functions, community gatherings, and much more. We have venues to hire that can suit your needs, whatever they happen to be.</p>
             </div>
 
             <div className="ImageContainer-wrapper">

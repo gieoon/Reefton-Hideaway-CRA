@@ -19,7 +19,7 @@ import Social from './components/social';
 function App() {
   return (
     <div className="App">
-      {/* <Header />
+      <Header />
       <Notification />
       <Section1 />
       <Section2 />
@@ -28,10 +28,10 @@ function App() {
       <GettingHere />
       <Section5 />
       <AvailabilityChecker />
-      <About /> */}
-      <Disclaimer />
+      <About />
+      {/* <Disclaimer /> */}
       <ContactUs />
-      {/* <Footer /> */}
+      <Footer />
       <Social />
     </div>
   );
