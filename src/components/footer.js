@@ -16,7 +16,7 @@ export default function Footer({}){
             <span>This website was made by <a href="https://webbi.co.nz"
                 target="_blank"
                 rel="noopener noreferrer"
-            >Webbi Digital Designs</a></span>
+            >Webbi Digital Studio</a></span>
             <p>&copy; Reefton Hideaway 2020, All Rights Reserved</p>
         </div>
     )

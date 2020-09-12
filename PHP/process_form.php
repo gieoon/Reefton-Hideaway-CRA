@@ -5,6 +5,8 @@
 
     // decode the JSON data
     $post = json_decode($post, true);
+    // $post = $_POST;
+    // $post = json_decode($_POST, true);
 
     $name = $post['name'];
 	$email = $post['email'];
@@ -14,7 +16,8 @@
     $roomCount = $post['roomCount'];
     $paxCount = $post['paxCount'];
 
-    $outgoing = wordwrap($msg,70) 
+    $outgoing = "Inquiry at: " . date('Y-m-d H:i:s', time()) 
+        . "\n" . wordwrap($msg,200) 
         . "\n\nCLIENT NAME: " . $name 
         . "\nCLIENT EMAIL: " . $email
         . "\nREQUESTED CHECK IN: " . $checkIn
@@ -22,12 +25,14 @@
         . "\nNUMBER OF ROOMS: " . $roomCount
         . "\nNUMBER OF PAX: " . $paxCount;
 
-    // send email
-    // mail("jun.a.kagaya@gmail.com","REEFTON HIDEAWAY | WEB ENQUIRY",$outgoing);
+    // file_put_contents( 'debug' . date('Y-m-d H:i:s', time()) . '.log', var_export( $outgoing, true));
+    
+    // Send email
     // mail("hello@reeftonhideaway.com","REEFTON HIDEAWAY | WEB ENQUIRY",$outgoing);
     mail("reeftonhideaway@gmail.com","REEFTON HIDEAWAY | WEB ENQUIRY",$outgoing);
+    mail("jun.a.kagaya@gmail.com","REEFTON HIDEAWAY | WEB ENQUIRY",$outgoing);
 
 
-    echo "Hello World yyoyo";
+    // echo "Hello World yyoyo";
     return http_response_code(200);
 ?>

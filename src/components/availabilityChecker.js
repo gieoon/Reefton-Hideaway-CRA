@@ -31,7 +31,7 @@ const DAYSOFWEEK = [
 
 const SERVER_URL =  
     "https://reefton-hideaway.appspot.com/process_form.php"; 
-    // "http://localhost:8080/process_form.php"; 
+    // "http://localhost:9000/process_form.php"; 
 
 export default function AvailabilityChecker({
 
@@ -215,8 +215,8 @@ const sendData = async (obj, setSuccess) => {
     const response = await fetch(SERVER_URL, {
         method: 'POST',
         mode: 'no-cors',
-        cache: 'no-cache',
-        credentials: 'same-origin',
+        // cache: 'no-cache',
+        // credentials: 'same-origin',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
