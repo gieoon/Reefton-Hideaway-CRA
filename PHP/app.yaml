@@ -1,5 +1,5 @@
+# runtime: php73
 runtime: php55
-
 
 handlers:
 # Serve images as static resources.
@@ -10,4 +10,5 @@ handlers:
 
 # Serve php scripts.
 - url: /(.+\.php)$
+  # script: auto
   script: \1

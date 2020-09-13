@@ -1,7 +1,11 @@
 
 <?php
     // get the incoming POST data
-    $post = file_get_contents('php://input') ?? $_POST;
+    // $post = file_get_contents('php://input') ?? $_POST;
+    $post = file_get_contents('php://input');
+    if(is_null($post)){
+        $post = $_POST;
+    }
 
     // decode the JSON data
     $post = json_decode($post, true);
