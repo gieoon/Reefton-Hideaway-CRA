@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Leave A Review for Reefton Hideaway</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+        <link rel="apple-touch-icon" href="../background.jpg" />
+        <link rel="manifest" href="../manifest.json" />
+        <meta
+            name="description"
+            content="Leave A Review for Reefton Hideaway"
+        />
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="../favicon.png"/>
+        <link rel="canonical" href="https://reeftonhideaway.com/"/>
+        <meta property="og:site_name" content="Reefton Hideaway | Reefton's Friendliest Accomodation"/>
+        <meta property="og:title" content="Reefton Hideaway | Reefton's Friendliest Accomodation"/>
+        <meta property="og:url" content="https://reeftonhideaway.com/"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:description" content="Reefton Hideaway | Reefton's Friendliest Accomodation"/>
+        <meta property="og:image" content="../background.jpg"/>
+        <meta property="og:image:width" content="1024"/>
+        <meta property="og:image:height" content="200"/>
+        <meta itemprop="name" content="Reefton Hideaway | Reefton's Friendliest Accomodation"/>
+        <meta itemprop="url" content="https://reeftonhideaway.com/"/>
+        <meta itemprop="description" content="Reefton Hideaway | Reefton's Friendliest Accomodation"/>
+        <meta itemprop="thumbnailUrl" content="../background/jpg"/>
+        <style>
+            * {
+                font-family: 'Roboto', sans-serif;
+            }
+            body {
+                padding: 50px;
+                text-align: left;
+                max-width: 650px;
+                margin: auto;
+                background-color: rgb(218, 242, 252);
+            }
+            ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                color: rgb(16,76,151);
+            }
+            ::-moz-placeholder { /* Firefox 19+ */
+                color: rgb(16,76,151);
+            }
+            :-ms-input-placeholder { /* IE 10+ */
+                color: rgb(16,76,151);
+            }
+            :-moz-placeholder { /* Firefox 18- */
+                color: rgb(16,76,151);
+            }
+            #showError {
+                background-color: rgb(255, 62, 62);
+                color: white;
+                padding: 15px 25px;
+                text-align: left;
+                font-size: 16px;
+            }
+            #thankYou {
+                background-color: rgb(16,76,151);
+                color: rgb(218, 242, 252);
+                padding: 15px 25px;
+                text-align: center;
+                font-size: 22px;
+                position: fixed;
+                top: 50%;
+                left: 0;
+                right: 0;
+                margin: auto;
+                transform: translateY(-50%);
+            }
+            h2 {
+                font-weight: 200;
+                font-size: 30px;
+            }
+            label {
+                font-size: 20px;
+                font-weight: 200;
+            }
+            input, 
+            textarea {
+                font-size: 18px;
+                padding: 6px 12px;
+                border-radius: 4px;
+                border: 1px solid rgb(16,76,151);
+                outline: none;
+                background-color: white;
+                color: rgb(16,76,151);
+                display: block;
+                margin-bottom: 25px;
+                margin-top: 5px;
+                width: 450px;
+                max-width: 100%;
+            }
+            #submit {
+                background-color: rgb(16,76,151);
+                color: rgb(218, 242, 252);
+                border-radius: 4px;
+                margin-top: 15px;
+                padding: 6px 12px;
+                width: fit-content;
+                cursor: pointer;  
+                font-size: 20px;
+                font-weight: 200;
+                letter-spacing: 0.5px;  
+            }
+            #submit:hover {
+                opacity: .75;
+            }
+            .overlay {
+                background-color: rgb(218, 242, 252);
+                position: fixed;
+                height: 100vh;
+                width: 100vw;
+                left: 0;
+                top: 0;
+                pointer-events: none;
+                transition: opacity 250ms ease-in-out;
+                opacity: 0;
+            }
+            .lds-ring {
+                display: inline-block;
+                position: relative;
+                width: 80px;
+                height: 80px;
+
+                position: absolute;
+                top: 50%;
+                left: 0;
+                right: 0;
+                margin: auto;
+                transform: translateY(-50%);
+            }
+            .lds-ring div {
+                box-sizing: border-box;
+                display: block;
+                position: absolute;
+                width: 64px;
+                height: 64px;
+                margin: 8px;
+                border: 8px solid rgb(16,76,151);
+                border-radius: 50%;
+                animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+                border-color: rgb(16,76,151) transparent transparent transparent;
+            }
+            .lds-ring div:nth-child(1) {
+                animation-delay: -0.45s;
+            }
+            .lds-ring div:nth-child(2) {
+                animation-delay: -0.3s;
+            }
+            .lds-ring div:nth-child(3) {
+                animation-delay: -0.15s;
+            }
+            @keyframes lds-ring {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Leave a Review for Reefton Hideaway</h2>
+        <div id="showError" style="display:none"></div>
+        <div id="thankYou" style="display:none"></div>
+        
+        <!-- Loading -->
+        <div class="overlay">
+            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+        </div>  
+
+        <label for="name">My name</label>
+        <input name="name" id="name"/>
+        <label for="description">My review</label>
+        <textarea id="description" placeholder="Your review here..."></textarea>
+        <button id="submit" 
+            class="g-recaptcha"
+            data-sitekey="6LfB9L0aAAAAACdsiTyTNJ29xfp-9-ho9-rnvLzL"
+            data-callback='submitPressed'
+            data-action='submit'>
+            Submit
+        </button>
+    <!-- type="submit"  -->
+    <!-- onclick="submitPressed()" -->
+
+        <!-- Use a form here? -->
+
+        <script src="https://www.google.com/recaptcha/api.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-firestore.js"></script>
+        <script>
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            var firebaseConfig = {
+              apiKey: "AIzaSyBiw4ORAbMmxImx4qPGq9JAFtUI36PeYQ0",
+              authDomain: "sheets2website-1598313088115.firebaseapp.com",
+              databaseURL: "https://sheets2website-1598313088115.firebaseio.com",
+              projectId: "sheets2website-1598313088115",
+              storageBucket: "sheets2website-1598313088115.appspot.com",
+              messagingSenderId: "1082271392691",
+              appId: "1:1082271392691:web:45c06be046a0a72b5b21c6",
+              measurementId: "G-ZWGE5NLZ4Z"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            var db = firebase.firestore();
+        </script>
+
+        <script>
+            function submitPressed(e){
+                console.log('submit pressed: ', e);
+                var name = document.getElementById('name').value;
+                var description = document.getElementById('description').value;
+                document.querySelector('.overlay').style.opacity = 1;
+                document.querySelector('#submit').style.display = "none";
+
+                if(name === ""){
+                    document.getElementById('showError').innerHTML = "Please provide your name";
+                    document.getElementById('showError').style.display = "block";
+                }
+                else if(description === ""){
+                    document.getElementById('showError').innerHTML = "Please provide a review";
+                    document.getElementById('showError').style.display = "block";
+                }
+                else {
+                    console.log('sending: ', name, description);
+                    sendData([
+                        {
+                            field: "name", 
+                            value: name,
+                        },
+                        {
+                            field: "review",
+                            value: description,
+                        }
+                    ], ()=>{
+                        document.getElementById('thankYou').display = "block";
+                        db.collection('CMS')
+                            .doc("reefton_hideaway")
+                            .collection('Reviews')
+                            .add({
+                                title: name,
+                                content: description,
+                                files: [],
+                                images: [],
+                                audio: [],
+                                createdOn: firebase.firestore.FieldValue.serverTimestamp(),
+                                date: firebase.firestore.FieldValue.serverTimestamp(),
+                            })
+                            .then(doc => {
+                                console.log('Successfully saved review to DB');
+                                window.setTimeout(()=>{
+                                    window.location.href = "/";
+                                }, 2000);
+                            })
+                            .catch(err => console.error("Error saving data to DB: ", err));
+                    })
+                }
+            }
+
+            const EMAIL_API_SERVER = 'https://webbi-email-server.ts.r.appspot.com';
+
+            var sendData = (obj, cb) => {
+                document.getElementById('showError').display = "none";
+
+                fetch(EMAIL_API_SERVER,{
+                    method: 'POST',
+                    mode: 'cors', // no-cors, *cors, same-origin
+                    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+                    credentials: 'same-origin', // include, *same-origin, omit
+                    headers: {
+                        'Content-Type': 'application/json'
+                        // 'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: JSON.stringify({
+                        subject: "You Received A Review | Reefton Hideaway",
+                        template_id: "d-8d19fde9d46b44d8884802b85c6f531f",
+                        destination_name: 'Reefton Hideaway',
+                        destination_email: 'jun.a.kagaya@gmail.com',
+                        title: "You Received A Review",
+                        items: obj,
+                    })
+                })
+
+                .then((response) => {
+                    response.text()
+                    .then(d => {
+                        console.log("RESPONSE: ", d);
+                        cb();
+                    })
+                });
+            }
+        </script>
+    </body>
+</html>

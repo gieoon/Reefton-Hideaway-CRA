@@ -12,6 +12,7 @@ import Section4 from './components/section4';
 import Section5 from './components/section5';
 import AvailabilityChecker from './components/availabilityChecker';
 import ContactUs from './components/contactUs';
+import Comments from './components/comments';
 import GettingHere from './components/gettingHere';
 import Footer from './components/footer';
 import Social from './components/social';
@@ -27,10 +28,14 @@ function App() {
       <Section4 />
       <GettingHere />
       <Section5 />
+      <Comments />
       <AvailabilityChecker />
       <About />
       {/* <Disclaimer /> */}
       <ContactUs />
+      <div className="Additional">
+        <p>We may be able to accept Volunteers/Woofers.<br/>Get in touch to learn more.</p>
+      </div>
       <Footer />
       <Social />
     </div>

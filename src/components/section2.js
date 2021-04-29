@@ -12,7 +12,7 @@ export default function Section2({
             <div className="Inner">
                 <div>
                     <h2>Accomodation offers</h2>
-                    <p>Our room choices for your stay in Reefton.</p>
+                    <p className="section2-desc">Our room choices for your stay in Reefton.</p>
                 </div>
                 <div className="ImageContainer-wrapper">
                     <ImageContainer 

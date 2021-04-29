@@ -52,6 +52,65 @@ $background-color-light: rgb(218, 242, 252);
   }
 }
 
+.Comments {
+  padding: 65px 35px;
+  background-color: $background-color-light;
+
+  h2 {
+    margin-top: 0px;
+    margin-bottom: 17px;
+    color: rgb(16, 76, 151);
+    font-size: 28px;
+    letter-spacing: normal;
+    line-height: 36px;
+    text-align: left;
+  }
+  
+  .review {
+    margin: 50px auto;
+    padding: 35px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    border-color: $background-color-light;
+    width: 100%;
+    max-width: 640px;
+
+    .text {
+      font-weight: 400;
+      font-size: 16px;
+      text-align: left;
+      width: 100%;
+      color: $primary-background-color;//rgba(0,0,0,.75);
+    }
+    .author {
+      font-weight: 600;
+      font-size: 18px;
+      text-align: right;
+      width: 100%;
+      margin-top: 15px;
+      color: $primary-background-color;
+    }
+  }
+
+  a {
+    text-decoration: none;
+
+    .new-comment {
+      background-color: $primary-background-color;
+      color: $background-color-light;
+      padding: 12px 24px;
+      border-radius: 4px;
+      margin: auto;
+      width: fit-content;
+      transition: all $anim-duration ease-in-out;
+      
+      &:hover {
+        opacity: .75;
+      }
+    }
+  }
+}
+
 .Notification {
   position: absolute;
   top: $header-height;
@@ -127,6 +186,7 @@ $background-color-light: rgb(218, 242, 252);
     color: rgb(0, 156, 222);
     margin: 0px 6px;
     text-align: center;
+    margin-bottom: 10px;
   }
 
   p {
@@ -141,6 +201,7 @@ $background-color-light: rgb(218, 242, 252);
     // margin-top: 0px!important;
     font-weight: 700;
     max-width: 80%;
+    // text-align: left;
   }
 }
 
@@ -175,12 +236,21 @@ $background-color-light: rgb(218, 242, 252);
       text-align: left;
     }
 
+    .section2-desc {
+        font-size: 18px;
+        line-height: 1.5556;
+        margin-bottom: 37px;
+        color: black;
+        font-weight: 300;
+        text-align: left!important;
+    }
     p:not(.description) & p:not(.price) {
       font-size: 18px;
       line-height: 1.5556;
       margin-bottom: 37px;
       color: black;
       font-weight: 300;
+      text-align: center!important;
     }
   }
 }
@@ -212,6 +282,7 @@ $background-color-light: rgb(218, 242, 252);
       margin-bottom: 37px;
       color: black;
       font-weight: 300;
+      text-align: left;
     }
   }
 }
@@ -250,6 +321,7 @@ $background-color-light: rgb(218, 242, 252);
       margin-bottom: 37px;
       color: black;
       font-weight: 300;
+      text-align: left;
     }
   }
 }
@@ -286,6 +358,7 @@ $background-color-light: rgb(218, 242, 252);
       margin-bottom: 37px;
       color: black;
       font-weight: 300;
+      text-align: left;
     }
   }
 }
@@ -521,17 +594,23 @@ $background-color-light: rgb(218, 242, 252);
 
   .Inner {
       margin: auto;
+      max-width: 350px;
 
       h2 {
         color: $primary-background-color;
         font-size: 28px;
       }
 
+      p {
+        text-align: left;
+        white-space: nowrap;
+      }
+
       .contact-wrapper {
         text-align: left;
         font-weight: 500;
         white-space: nowrap;
-        width: 20%;
+        // width: 20%;
         margin: auto;
 
         div {
@@ -561,6 +640,19 @@ $background-color-light: rgb(218, 242, 252);
   }
 }
 
+.Additional {
+  padding: 35px 28px;
+
+  p {
+    font-size: 18px;
+    line-height: 1.5556;
+    margin-bottom: 37px;
+    color: black;
+    font-weight: 300;
+    text-align: left;
+  }
+}
+
 .About {
   padding: 35px 28px;
   padding-top: 64px;
@@ -585,7 +677,7 @@ $background-color-light: rgb(218, 242, 252);
       margin-bottom: 37px;
       color: black;
       font-weight: 300;
-
+      text-align: left;
     }
   }
 }
@@ -610,6 +702,7 @@ $background-color-light: rgb(218, 242, 252);
       margin-bottom: 37px;
       color: black;
       font-weight: 300;
+      text-align: left;
 
       a {
         text-decoration: none;
@@ -629,15 +722,21 @@ $background-color-light: rgb(218, 242, 252);
   background-color: $primary-background-color;
   padding: 15px 28px;
   color: white;
+  text-align: left!important;
 
-  a,span {
+  a,p,span {
     color: white;
     font-size: 13px;
     line-height: 1.15rem;
+    text-align: left;
+  }
+
+  #login-footer {
+    margin-left: 0px;
   }
 
   p {
-    margin-top: 3rem;
+    // margin-top: 3rem;
   }
 }
 

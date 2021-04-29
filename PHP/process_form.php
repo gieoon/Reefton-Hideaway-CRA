@@ -6,7 +6,6 @@
     if(is_null($post)){
         $post = $_POST;
     }
-
     // decode the JSON data
     $post = json_decode($post, true);
     // $post = $_POST;
