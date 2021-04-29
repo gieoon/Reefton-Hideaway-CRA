@@ -15,7 +15,7 @@ export default function Footer({}){
                 >Webbi</a>
             </p>
             <p id="login-footer">
-                <a href="https://login.reefton_hideaway.craftie.xyz/" target="_blank" rel="noopener noreferer">Login</a>
+                <a href="https://login.reeftonhideaway.com/" target="_blank" rel="noopener noreferer">Login</a>
             </p>
         </div>
     )
