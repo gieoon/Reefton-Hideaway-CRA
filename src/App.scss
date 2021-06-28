@@ -33,7 +33,7 @@ $background-color-light: rgb(218, 242, 252);
     margin-right: 1rem;
     
     img {
-      height: 45px;
+      height: 40px;
       min-width: 100%;
     }
   }
@@ -50,6 +50,7 @@ $background-color-light: rgb(218, 242, 252);
       text-decoration: none;
       display: flex;
       align-items: center;
+      text-align: left;
 
       &:hover {
         opacity: .75;

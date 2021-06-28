@@ -10,4 +10,4 @@ after each deployment go there and re-enter the url.
 
 https://reeftonhideaway.com
 
-$ npm run deploy
+$ npm run build && npm run deploy
