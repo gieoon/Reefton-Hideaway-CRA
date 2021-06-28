@@ -34,7 +34,7 @@ function App() {
       {/* <Disclaimer /> */}
       <ContactUs />
       <div className="Additional">
-        <p>We may be able to accept Volunteers/Woofers.<br/>Get in touch to learn more.</p>
+        <p>We may be able to accept Volunteers/Woofers.<br/>Contact Ramu <b>(+64) 223580668</b> to learn more.</p>
       </div>
       <Footer />
       <Social />

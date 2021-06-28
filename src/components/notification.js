@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import close from '../assets/close_white.svg';
-export default Notification = ({}) => {
+export default function Notification(){
 
     const [showing, setShowing] = useState(true);
 
